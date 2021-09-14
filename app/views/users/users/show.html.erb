@@ -1,0 +1,35 @@
+<main>
+  <p id="notice"></p>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="p-5"></div>
+        <p class="text-center">
+          <center style="font-size:50px;">マイページ</center>
+        </p>
+        <div class="p-3"></div>
+        <div class="row">
+          <div class="col-5">
+            <table class="table" border=2>
+              <tr>
+                <td>ユーザーネーム</td>
+                <td><%= @user.name %></td>
+              </tr>
+              <tr>
+                <td>メールアドレス</td>
+                <td><%= @user.email %></td>
+              </tr>
+              <tr>
+                <td>登録日時</td>
+                <td><%= @user.created_at.strftime('%Y/%m/%d') %></td>
+              </tr>
+            </table>
+            <div class="p-1"></div>
+            <%= link_to "旅行計画案へ", users_plans_path, class: "btn btn-success" %>
+            <%= link_to "Editing", edit_users_user_path(@user), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

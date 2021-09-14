@@ -1,0 +1,47 @@
+<main class="mt-5">
+  <p id="notice"></p>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="p-4">
+        <p class="text-center"></div>
+          <center style="font-size:50px;">投稿詳細</center>
+        </p>
+        <div class="p-3"></div>
+        <form>
+          <label for="image" class="col-sm-2"></label>
+            <%= attachment_image_tag @post, :image %>
+          </br>
+          <label for="genre" class="col-sm-2">ジャンル</label>
+            <% if @post.genre == "1" %>
+              <%= 'ホテル' %>
+            <% elsif @post.genre == "2" %>
+              <%= '旅館' %>
+            <% else %>
+              <%= '民宿' %>
+            <% end %>
+          </br>
+          <label for="facility_name" class="col-sm-2">施設名</label>
+            <%= @post.facility_name %>
+          </br>
+          <label for="address" class="col-sm-2">所在地</label>
+            <%= @post.address %>
+          </br>
+          <label for="review" class="col-sm-2">レビュー</label>
+            <%= @post.review %>
+          </br>
+          <label for="breakfast_existence" class="col-sm-2">朝食の有無</label>
+            <% if @post.breakfast_existence? %>
+              朝食有り
+            <% else %>
+             朝食無し
+            <% end %>
+          </br>
+          <label for="url" class="col-sm-2">掲載元URL</label>
+            <%= @post.url %>
+          </br>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

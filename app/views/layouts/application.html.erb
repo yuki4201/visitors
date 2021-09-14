@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Visitors</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+<body>
+  <header>
+    <main>
+      <nav class="navbar navbar-expand navbar-white bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <span>VISITORS</span>
+        </a>
+        <div class="container">
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <% if admin_signed_in? %>
+              <li class="nav-item">
+                <%= link_to "About", users_about_path, class: 'btn btn-default' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to '投稿一覧', admin_posts_path, class: 'btn btn-default' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'ユーザページ', admin_users_path, class: 'btn btn-default' %>
+              </li>
+              <li class="nav-item">
+                <%= button_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'btn btn-default' %>
+              </li>
+              <% elsif user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to "About", users_about_path, class: 'btn btn-default' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to '投稿一覧', users_posts_path, class: 'btn btn-default' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'マイページ', users_my_page_path, class: 'btn btn-default' %>
+              </li>
+              <li class="nav-item">
+                <%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-default' %>
+              </li>
+              <% else %>
+              <li class="nav-item">
+                <%= link_to "About", users_about_path, class: 'btn btn-default' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "投稿一覧", users_posts_path, class: 'btn btn-default' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "新規登録", new_user_registration_path, class: 'btn btn-default' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "ログイン", new_user_session_path, class: 'btn btn-default' %>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+  <%= yield %>
+</main>
+  </body>
+</html>

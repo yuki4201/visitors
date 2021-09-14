@@ -1,0 +1,55 @@
+<main class="mt-5">
+  <p id="notice"></p>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p class="text-center">
+          <center style="font-size:50px;">VISITORS</center>
+        </p>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="/img_7260.jpg" class="d-block w-100" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img src="/img_7260.jpg" class="d-block w-100" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+              <img src="/img_7260.jpg" class="d-block w-100" alt="Third slide"> #/publicに画像を保存、パスは/***.jpg
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        </br>
+        <div class="form-row text-center">
+          <div class="col-12">
+          <% if user_signed_in? %>
+        　<label for="post" class="col-mt-2"></label>
+        　　<%= link_to "投稿一覧へ【LIST UP】", users_posts_path, class: "btn btn-primary" %>
+        　<label for="new" class="col-mt-2"></label>
+        　　<%= link_to "新しく投稿【NEW】", new_users_post_path, class: "btn btn-success" %>
+        　<label for="plan" class="col-mt-2"></label>
+        　　<%= link_to "旅行の計画を立てる【PLAN】", new_users_plan_path, class: "btn btn-dark" %>
+        　<% else %>
+        　<label for="registration" class="col-mt-2"></label>
+            <%= link_to "新規登録", new_user_registration_path, class: "btn btn-primary" %>
+          <label for="session" class="col-mt-2"></label>
+            <%= link_to "ログイン", new_user_session_path, class: "btn btn-primary" %>
+        　<% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

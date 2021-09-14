@@ -1,0 +1,42 @@
+<main>
+<p id="notice"></p>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="p-5"></div>
+        <p class="text-center">
+          <center style="font-size:50px;">ユーザ一覧</center>
+        </p>
+        </br>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ユーザーID</th>
+              <th>ユーザーネーム</th>
+              <th>メールアドレス</th>
+              <th>ステータス</th>
+              <th>ADMIN ONLY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+            <tr>
+              <td><%= user.id %></td>
+              <td><%= user.name %></td>
+              <td><%= link_to admin_user_path(user) do %>
+                  <%= user.email %></td>
+                  <% end %>
+              <% if user.is_active? %>
+              <td>有効</td>
+              <% else %>
+              <td>退会済み</td>
+              <% end %>
+              <td><%= link_to "退会", admin_withdraw_path(@user), method: :patch, class: "btn btn-danger", "data-confirm" => "本当に退会しますか?" %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
