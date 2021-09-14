@@ -2,6 +2,7 @@
 
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
+  
   before_action :reject_inactive_user, only: [:create]
   
   # GET /resource/sign_in
@@ -19,16 +20,16 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
-　def reject_inactive_user
-　　@user = user.find_by(email: params[:user][:email])
-　　if @user
-　　　if @user.valid_password?(params[:user][:password]) && !@user.is_active
-　　　　redirect_to new_user_session_path
-　　　end
-　　end
-　end
-　
-  # protected
+  protected
+
+  def reject_inactive_user
+    @user = User.find_by(email: params[:user][:email])
+    if @user
+      if @user.valid_password?(params[:user][:password]) && !@user.is_valid
+        redirect_to root_path
+      end
+    end
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params

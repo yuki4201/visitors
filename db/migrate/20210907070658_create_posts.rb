@@ -8,6 +8,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.string :facility_name
       t.string :address
       t.string :genre
+      t.integer :user_id
       t.text :review
       t.text :url
       t.boolean :breakfast_existence, default: true

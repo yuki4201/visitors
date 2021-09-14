@@ -10,13 +10,23 @@ class Admin::UsersController < ApplicationController
     @plans = @user.plans
   end
   
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to admin_users_path
+  end
+  
   def unsubscribe
     @user = User.find(params[:id])
   end
   
   def withdraw
     @user = User.find(params[:id])
-    @user.update(is_active: false)
+    @user.update(is_valid: false)
     reset_session
     redirect_to admin_users_path
   end

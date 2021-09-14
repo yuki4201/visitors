@@ -29,7 +29,7 @@ class Users::PlansController < ApplicationController
   end
 
   def update
-    @plan = Plan.find(params[:id])
+    @plan = Plan.find(params[:plan][:id])
     @plan.update(plan_params)
     redirect_to users_plans_path
   end

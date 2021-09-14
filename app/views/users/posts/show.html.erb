@@ -42,11 +42,11 @@
           </br>
           </form>
           <%# if user_signed_in? %>
-            <%= link_to "editing", edit_users_post_path, class: "btn btn-primary" %>
-            <%= link_to "share", class: "btn btn-success" %>
-            <%= button_to "delete", users_post_path(@post), method: :delete, class: "btn btn-danger", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
+            <%= link_to "Editi", edit_users_post_path, class: "btn btn-primary" %>
+            <%= link_to "Share", class: "btn btn-success" %>
+            <%= button_to "Delete", users_post_path(@post), method: :delete, class: "btn btn-danger", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
           <%# else %>
-            <%= link_to "share", class: "btn btn-success" %>
+            <%= link_to "Share", class: "btn btn-success" %>
           <%# end %>
           </form>
         </div>

@@ -10,8 +10,8 @@ class Admin::PlansController < ApplicationController
   end
 
   def update
-    @plan = Plan.find(params[:id])
-    @plan.update(plan_params)
+    @plan = Plan.find(params[:plan][:id])
+    @plan.update!(plan_params)
     redirect_to admin_plans_path
   end
   

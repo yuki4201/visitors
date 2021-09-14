@@ -45,8 +45,8 @@
                   <% end %>
                 </td>
                 <td><%= post.url %></td>
-                <td><%= link_to "editing", edit_admin_post_path(post), class: "btn btn-primary" %>
-                    <%= button_to "delete", admin_post_path(post), method: :delete, class: "btn btn-danger" %></td>
+                <td><%= link_to "Edit", edit_admin_post_path(post), class: "btn btn-primary" %>
+                    <%= button_to "Delete", admin_post_path(post), method: :delete, class: "btn btn-danger", "data-confirm" => "この投稿を削除します。よろしいですか？" %></td>
               </tr>
               <% end %>
             </tbody>

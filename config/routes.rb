@@ -23,12 +23,11 @@ Rails.application.routes.draw do
     patch '/plans' => 'plans#update'
     resources :plans, only: [:index, :edit, :update, :destroy]
     
-    resources :users, only: [:index, :show]
+    resources :users, only: [:index, :show, :show, :edit, :update]
     
-    get '/unsubscribe' => 'users#unsubscribe', as: 'confirm_unsubscribe'
-    get '/withdraw' => 'users#withdraw'
-    patch '/withdraw' => 'users#withdraw' 
-    
+    get '/:id/unsubscribe' => 'users#unsubscribe', as: 'confirm_unsubscribe'
+    get '/:id/withdraw' => 'users#withdraw'
+    patch '/:id/withdraw' => 'users#withdraw' 
   end
 
   namespace :users do

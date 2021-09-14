@@ -20,7 +20,7 @@
            <tbody>
              <% @plans.each do |plan| %>
              <tr>
-               <td><%= link_to plan.time, users_plan_path(plan) %></td> #年しか表示されない
+               <td><%= link_to plan.time.strftime('%Y-%m-%d %T'), users_plan_path(plan) %></td> #年しか表示されない
                <td><%= plan.schedule %></td>
               <td>
                 <% if plan.meal == "0" %>

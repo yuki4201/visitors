@@ -20,7 +20,7 @@ class Users::UsersController < ApplicationController
   
   def withdraw
     @user = current_user
-    @user.update(is_active: false)
+    @user.update(is_valid: false)
     reset_session
     redirect_to root_path
   end

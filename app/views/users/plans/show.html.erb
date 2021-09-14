@@ -10,7 +10,7 @@
         <div class="p-3"></div>
         <form>
           <label for="name" class="col-sm-2">年・月・日・時間</label>
-          　<%= @plan.time %>
+          　<%= @plan.time.strftime('%Y-%m-%d %T') %>
           </br>
           <label for="schedule" class="col-sm-2">スケジュール</label>
           　<%= @plan.schedule %>
@@ -33,8 +33,8 @@
             <%= @plan.lodgment_target_name %>
           </br>
         </form>
-          <%= link_to "editing", edit_users_plan_path, class: "btn btn-success" %>
-          <%= button_to "delete", users_plan_path(@plan), method: :delete, class: "btn btn-danger", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
+          <%= link_to "Edit", edit_users_plan_path, class: "btn btn-success" %>
+          <%= button_to "Delete", users_plan_path(@plan), method: :delete, class: "btn btn-danger", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
       </div>
     </div>
   </div>

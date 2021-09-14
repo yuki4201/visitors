@@ -35,7 +35,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :uid
       t.string :provider
-      t.boolean :is_active, default: true
+      t.boolean :is_valid, default: true
       t.datetime :created_at
       t.datetime :updated_at
       
