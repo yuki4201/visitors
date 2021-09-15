@@ -5,7 +5,7 @@
       <div class="col">
         <div class="p-4"></div>
         <p class="text-center">
-          <center style="font-size:50px;">旅行計画案</center>
+          <center style="font-size:30px;">旅行計画案</center>
         </p>
         <table class="table table-hover" border="2">
           <thead>
@@ -20,7 +20,7 @@
            <tbody>
              <% @plans.each do |plan| %>
              <tr>
-               <td><%= link_to plan.time.strftime('%Y-%m-%d %T'), users_plan_path(plan) %></td> #年しか表示されない
+               <td><%= link_to plan.time.strftime('%Y-%m-%d %T'), users_plan_path(plan) %></td>
                <td><%= plan.schedule %></td>
               <td>
                 <% if plan.meal == "0" %>

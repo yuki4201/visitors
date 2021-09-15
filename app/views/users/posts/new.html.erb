@@ -4,7 +4,9 @@
     <div class="row">
       <div class="col">
         <div class="p-5"></div>
-        <h5>新規投稿</h5>
+        <p class="text-center">
+          <center style="font-size:30px;">新規投稿</center>
+        </p>
         <%= form_with model: @post, url:users_posts_path(@post), local:true do |f| %>
         </br>
         <div class="form-group row">
@@ -22,19 +24,19 @@
         <div class="form-group row">
           <label for="facility_name" class="col-sm-2">施設名</label>
           <div class="col-sm-10">
-            <%= f.text_field :facility_name, placeholder: "宿泊先の名前を入力" %>
+            <%= f.text_field :facility_name, size:50, placeholder: "宿泊先の名前を入力" %>
           </div>
         </div>
         <div class="form-group row">
           <label for="" class="col-sm-2">所在地</label>
           <div class="col-sm-10">
-            <%= f.text_field :address, placeholder: "都道府県名を入力" %>
+            <%= f.text_field :address, size:50, placeholder: "都道府県名を入力" %>
           </div>
         </div>
         <div class="form-group row">
           <label for="review" class="col-sm-2">レビュー</label>
           <div class="col-sm-10">
-            <%= f.text_area :review, placeholder: "レビューを入力" %>
+            <%= f.text_field :review, size:50, placeholder: "レビューを入力" %>
           </div>
         </div>
         <div class="form-group row">

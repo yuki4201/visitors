@@ -5,7 +5,7 @@
       <div class="col">
         <div class="p-4"></div>
         <p class="text-center">
-          <center style="font-size:50px;">旅行計画案(DETAILS)</center>
+          <center style="font-size:30px;">旅行計画案(DETAILS)</center>
         </p>
         <div class="p-3"></div>
         <form>
@@ -33,7 +33,7 @@
             <%= @plan.lodgment_target_name %>
           </br>
         </form>
-          <%= link_to "Edit", edit_users_plan_path, class: "btn btn-success" %>
+          <%= link_to "Edit", edit_users_plan_path, class: "btn btn-primary" %>
           <%= button_to "Delete", users_plan_path(@plan), method: :delete, class: "btn btn-danger", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
       </div>
     </div>

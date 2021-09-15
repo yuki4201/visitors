@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   attachment :image
   
-  # validates :image, presence: true
+  validates :image, presence: true
   validates :genre, presence: true
   validates :facility_name, presence: true
   validates :address, presence: true
