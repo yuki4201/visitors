@@ -25,7 +25,7 @@
               <% @posts.each do |post| %>
               <tr>
                 <td><%= link_to post.id, users_post_path(post) %></td>
-                <td><%= post.image_id %></td>
+                <td><%= attachment_image_tag post, :image, format: 'jpeg', size:"30x30" %></td>
                 <td>
                 <% if post.genre == "1" %>
                   <%= 'ホテル' %>
@@ -45,8 +45,8 @@
                   <% end %>
                 </td>
                 <td><%= post.url %></td>
-                <td><%= link_to "Edit", edit_admin_post_path(post), class: "btn btn-primary" %>
-                    <%= button_to "Delete", admin_post_path(post), method: :delete, class: "btn btn-danger", "data-confirm" => "この投稿を削除します。よろしいですか？" %></td>
+                <td><%= link_to "edit", edit_admin_post_path(post), class: "btn btn-primary fas fa-edit" %>
+                    <%= link_to "delete", admin_post_path(post), method: :delete, class: "btn btn-danger fas fa-trash-alt", "data-confirm" => "この投稿を削除します。よろしいですか？" %></td>
               </tr>
               <% end %>
             </tbody>

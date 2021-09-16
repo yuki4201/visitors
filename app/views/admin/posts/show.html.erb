@@ -10,7 +10,7 @@
         <div class="p-3"></div>
         <form>
           <label for="image" class="col-sm-2"></label>
-            <%= attachment_image_tag @post, :image %>
+            <%= attachment_image_tag @post :image %>
           </br>
           <label for="genre" class="col-sm-2">ジャンル</label>
             <% if @post.genre == "1" %>

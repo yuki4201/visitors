@@ -29,7 +29,7 @@
                 <td><%= link_to edit_admin_post_path(post) do %>
                     <%= post.id %></td>
                     <% end %>
-                <td><%= post.image_id %></td>
+                <td><%= attachment_image_tag post, :image, format: 'jpeg', size:"30x30" %></td>
                 <td>
                 <% if post.genre == "1" %>
                   <%= 'ホテル' %>

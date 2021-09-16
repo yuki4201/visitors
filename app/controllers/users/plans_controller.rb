@@ -3,6 +3,7 @@ class Users::PlansController < ApplicationController
   def index
     @plans = Plan.all
     @names = Plan.page(params[:page])
+    
   end
 
   def new
@@ -21,11 +22,13 @@ class Users::PlansController < ApplicationController
   
   def show
     @plan = Plan.find(params[:id])
-    @plans = Plan.all
   end
 
   def edit
     @plan = Plan.find(params[:id])
+    unless @plan.user_id == current_user.id #URL入力による投稿編集画面への遷移を防止
+      redirect_to  users_plans_path
+    end
   end
 
   def update

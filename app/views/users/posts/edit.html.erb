@@ -9,58 +9,58 @@
         </p>
         <%= form_with model: @post, url:users_posts_path, local:true do |f| %>
         </br>
-        <div class="form-group row">
-          <label for="inputImage" class="col-sm-2">画像</label>
-          <div class="col-sm-10">
-            <%= f.attachment_field :image, placeholder: "画像" %>
+          <div class="form-group row">
+            <label for="inputImage" class="col-sm-2">画像</label>
+            <div class="col-sm-10">
+              <%= f.attachment_field :image, placeholder: "画像" %>
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="genre" class="col-sm-2">ジャンル</label>
-          <div class="col-sm-10">
-            <%= f.select :genre, { 'ホテル':1, '旅館':2,'民宿':3 }, {include_blank: '--選択してください--'} %>
+          <div class="form-group row">
+            <label for="genre" class="col-sm-2">ジャンル</label>
+            <div class="col-sm-10">
+              <%= f.select :genre, { 'ホテル':1, '旅館':2,'民宿':3 }, {include_blank: '--選択してください--'} %>
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="facility_name" class="col-sm-2">施設名</label>
-          <div class="col-sm-10">
-            <%= f.text_field :facility_name, size:50 %>
+          <div class="form-group row">
+            <label for="facility_name" class="col-sm-2">施設名</label>
+            <div class="col-sm-10">
+              <%= f.text_field :facility_name, size:50 %>
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="address" class="col-sm-2">所在地</label>
-          <div class="col-sm-10">
-            <%= f.text_field :address, size:50 %>
+          <div class="form-group row">
+            <label for="address" class="col-sm-2">所在地</label>
+            <div class="col-sm-10">
+              <%= f.text_field :address, size:50 %>
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="review" class="col-sm-2">レビュー</label>
-          <div class="col-sm-10">
-            <%= f.text_field :review, size:50 %>
+          <div class="form-group row">
+            <label for="review" class="col-sm-2">レビュー</label>
+            <div class="col-sm-10">
+              <%= f.text_field :review, size:50 %>
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="breakfast_existence" class="col-sm-2">朝食の有無</label>
-          <div class="col-sm-10">
-            <%= f.radio_button :breakfast_existence, 1 %>
-            <%= f.label :breakfast_existence, '朝食有り', value: true %>
-            <%= f.radio_button :breakfast_existence, 0 %>
-            <%= f.label :breakfast_existence, '朝食無し', value: false %>
+          <div class="form-group row">
+            <label for="breakfast_existence" class="col-sm-2">朝食の有無</label>
+            <div class="col-sm-10">
+              <%= f.radio_button :breakfast_existence, 1 %>
+              <%= f.label :breakfast_existence, '朝食有り', value: true %>
+              <%= f.radio_button :breakfast_existence, 0 %>
+              <%= f.label :breakfast_existence, '朝食無し', value: false %>
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="url" class="col-sm-2">掲載元URL</label>
-          <div class="col-sm-10">
-            <%= f.text_field :url, size:50 %>
+          <div class="form-group row">
+            <label for="url" class="col-sm-2">掲載元URL</label>
+            <div class="col-sm-10">
+              <%= f.text_field :url, size:50 %>
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-2"></label>
-          <div class="col-sm-12">
-            <%= f.hidden_field :id, :value => params[:id] %>
-            <%= f.submit "UPDATE!", class: "btn btn-success btn-block" %>
+          <div class="form-group row">
+            <label class="col-sm-2"></label>
+            <div class="col-sm-12">
+              <%= f.hidden_field :id, :value => params[:id] %>
+              <%= f.submit "UPDATE!", class: "btn btn-success btn-block fas fa-edit" %>
+            </div>
           </div>
-        </div>
         <% end %>
       </div>
     </div>

@@ -17,7 +17,7 @@ class Admin::PlansController < ApplicationController
   
   def destroy
     @plan = Plan.find(params[:id])
-    @plan.destroy(plan_params)
+    @plan.destroy
     redirect_to admin_plans_path
   end
   

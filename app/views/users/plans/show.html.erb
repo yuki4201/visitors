@@ -33,8 +33,8 @@
             <%= @plan.lodgment_target_name %>
           </br>
         </form>
-          <%= link_to "Edit", edit_users_plan_path, class: "btn btn-primary" %>
-          <%= button_to "Delete", users_plan_path(@plan), method: :delete, class: "btn btn-danger", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
+        <%= link_to "Edit", edit_users_plan_path, class: "btn btn-primary fas fa-edit" %>
+        <%= link_to "Delete", users_plan_path(@plan), method: :delete, class: "btn btn-danger fas fa-trash-alt", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
       </div>
     </div>
   </div>
