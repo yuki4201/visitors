@@ -8,11 +8,12 @@
           <center style="font-size:30px;">投稿詳細 -ADMIN-</center>
         </p>
         <div class="p-3"></div>
-        <form>
-          <label for="image" class="col-sm-2"></label>
+        <div class="images">
             <%= attachment_image_tag @post, :image, :fill, 400, 300, format: 'jpeg' %>
-          </br>
-          <label for="genre" class="col-sm-2">ジャンル</label>
+        </div>
+        </br>
+        <form>
+          <label for="genre" class="col-md-2 offset-md-7">ジャンル</label>
             <% if @post.genre == "1" %>
               <%= 'ホテル' %>
             <% elsif @post.genre == "2" %>
@@ -21,27 +22,30 @@
               <%= '民宿' %>
             <% end %>
           </br>
-          <label for="facility_name" class="col-sm-2">施設名</label>
+          <label for="facility_name" class="col-md-2 offset-md-7">施設名</label>
             <%= @post.facility_name %>
           </br>
-          <label for="address" class="col-sm-2">所在地</label>
+          <label for="address" class="col-md-2 offset-md-7">所在地</label>
             <%= @post.address %>
           </br>
-          <label for="review" class="col-sm-2">レビュー</label>
+          <label for="review" class="col-md-2 offset-md-7">レビュー</label>
             <%= @post.review %>
           </br>
-          <label for="breakfast_existence" class="col-sm-2">朝食の有無</label>
+          <label for="breakfast_existence" class="col-md-2 offset-md-7">朝食の有無</label>
             <% if @post.breakfast_existence? %>
               朝食有り
             <% else %>
              朝食無し
             <% end %>
           </br>
-          <label for="url" class="col-sm-2">掲載元URL</label>
+          <label for="url" class="col-md-2 offset-md-7">掲載元URL</label>
             <%= @post.url %>
           </br>
-            <%= link_to " edit", edit_admin_post_path, class: "btn btn-primary fas fa-edit" %>
-            <%= link_to " delete", admin_post_path(@post), method: :delete, class: "btn btn-danger fas fa-trash-alt", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
+        </form>
+        </br>
+        <div class="col-md-6 offset-md-7">
+          <%= link_to " edit", edit_admin_post_path, class: "btn btn-primary fas fa-edit" %>
+          <%= link_to " delete", admin_post_path(@post), method: :delete, class: "btn btn-danger fas fa-trash-alt", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
         </div>
       </div>
     </div>

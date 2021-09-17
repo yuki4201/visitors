@@ -1,0 +1,101 @@
+diff -uprN visitors/visitors/config/credentials.yml.enc v/Visitirs/config/credentials.yml.enc
+--- visitors/visitors/config/credentials.yml.enc	1970-01-01 00:00:00.000000000 +0000
++++ v/Visitirs/config/credentials.yml.enc	2021-09-13 13:26:34.075550411 +0000
+@@ -0,0 +1 @@
++S5AoOPGdMR339UXUr0lRGg9msWZhowDwwVO+XbNZA9LREeZbzt1+97NljvpoeLT3pWPTXoFT0BAoNpcH7QFhvjsxzK3wKfB/wOZWEkGVZOOtRZWpqQ9VVK3RM7llRMmq7VVjkW88G4kKKbG1oX+Pf4luA2jhb827D8jyxbG3xQtUQh9STWa4BMK/Axb0ros8+u1ex3q2LPnR6jF93aX0LEtwBTHcj9kcSqHZQDiGziPRT9sKRsZG6naUkygi9xAvQhvvKtiC6Sbf7E8IXMiJRYIADX+j0sGRTFKDv4JygxA5x3/iqJFugAJU2t8Hql5nrHDQ4YrOLboQxPKrunXvk8zr2mdFEJEgA9/PtQiPI/52cohSpP0/q/k9dImhR+j4dFAirmVKaep+YRaEkoRvT/zLoAOyfUq+SnOY--IKvU3bcSVNMztoAe--lUsFBTku4Eol6O1fypsXug==
+\ No newline at end of file
+diff -uprN visitors/visitors/config/initializers/devise.rb v/Visitirs/config/initializers/devise.rb
+--- visitors/visitors/config/initializers/devise.rb	2021-09-13 12:37:08.375115463 +0000
++++ v/Visitirs/config/initializers/devise.rb	2021-09-13 13:26:34.075550411 +0000
+@@ -1,4 +1,5 @@
+-# frozen_string_literal: tr
++# frozen_string_literal: true
++
+ # Assuming you have not yet modified this file, each configuration option below
+ # is set to its default value. Note that some are commented out while others
+ # are not: uncommented lines are intended to protect your configuration from
+@@ -8,6 +9,9 @@
+ # Use this hook to configure devise mailer, warden hooks and so forth.
+ # Many of these configuration options can be set straight in your model.
+ Devise.setup do |config|
++  # omniauth有効化
++  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
++  
+   # The secret key used by Devise. Devise uses this key to generate
+   # random tokens. Changing this key will render invalid all existing
+   # confirmation, reset password and unlock tokens in the database.
+@@ -271,10 +275,6 @@ Devise.setup do |config|
+   # Add a new OmniAuth provider. Check the wiki for more information on setting
+   # up on your models and hooks.
+   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+-  
+-  # omniauth有効化
+-  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
+-  OmniAuth.config.logger = Rails.logger if Rails.env.development?
+ 
+   # ==> Warden configuration
+   # If you want to use other strategies, that are not supported by Devise, or
+diff -uprN visitors/visitors/config/initializers/omniauth.rb v/Visitirs/config/initializers/omniauth.rb
+--- visitors/visitors/config/initializers/omniauth.rb	2021-09-13 12:20:13.201981035 +0000
++++ v/Visitirs/config/initializers/omniauth.rb	1970-01-01 00:00:00.000000000 +0000
+@@ -1,5 +0,0 @@
+-# Rails.application.config.middleware.use OmniAuth::Builder do
+-#  provider :google_oauth2,'851889775668-f582oa105cu0j10uap1g3b29k22apeeu.apps.googleusercontent.com','FPJ-D8_2bOu5jhOWDLTuqmUd' 
+-#  {:provider_ignores_state => true}
+-#  OmniAuth.config.allowed_request_methods = %i[get]
+-# end
+\ No newline at end of file
+diff -uprN visitors/visitors/config/initializers/session_store.rb v/Visitirs/config/initializers/session_store.rb
+--- visitors/visitors/config/initializers/session_store.rb	2021-09-13 12:19:38.650351146 +0000
++++ v/Visitirs/config/initializers/session_store.rb	2021-09-13 13:26:34.075550411 +0000
+@@ -1,3 +1,3 @@
+ # Be sure to restart your server when you modify this file.
+ 
+-#Rails.application.config.session_store :cookie_store, key: '_visitors_session', domain: 'cloud9.us-east-1.amazonaws.com'
++Rails.application.config.session_store :cookie_store, key: '_visitors_session'
+diff -uprN visitors/visitors/config/master.key v/Visitirs/config/master.key
+--- visitors/visitors/config/master.key	1970-01-01 00:00:00.000000000 +0000
++++ v/Visitirs/config/master.key	2021-09-13 13:26:34.075550411 +0000
+@@ -0,0 +1 @@
++812ba3fd2d6747b9ca2d2a04d3d26cfa
+\ No newline at end of file
+diff -uprN visitors/visitors/config/routes.rb v/Visitirs/config/routes.rb
+--- visitors/visitors/config/routes.rb	2021-09-13 07:44:27.989095286 +0000
++++ v/Visitirs/config/routes.rb	2021-09-13 13:26:34.075550411 +0000
+@@ -17,17 +17,15 @@ Rails.application.routes.draw do
+   
+   namespace :admin do
+     
+-    patch '/posts' => 'posts#update'
+     resources :posts, only: [:index, :edit, :update, :destroy]
+     
+-    patch '/plans' => 'plans#update'
+     resources :plans, only: [:index, :edit, :update, :destroy]
+     
+     resources :users, only: [:index, :show]
+     
+     get '/unsubscribe' => 'users#unsubscribe', as: 'confirm_unsubscribe'
+     get '/withdraw' => 'users#withdraw'
+-    patch '/withdraw' => 'users#withdraw' 
++    patch '/withdraw' => 'users#withdraw'
+     
+   end
+ 
+@@ -38,10 +36,8 @@ Rails.application.routes.draw do
+     patch '/my_page' => 'users#update'
+     delete '/users/sign_out' => 'sessions#destroy'
+     
+-    patch '/posts' => 'posts#update'
+     resources :posts, only: [:new, :create, :index, :show, :edit, :update, :destroy]
+     
+-    patch '/plans' => 'plans#update'
+     resources :plans, only: [:new, :create, :index, :show, :edit, :update, :destroy]
+     
+     resources :users, only: [:show, :edit, :update]
+@@ -51,4 +47,4 @@ Rails.application.routes.draw do
+     patch '/withdraw' => 'users#withdraw' 
+     
+   end
+-end
+\ No newline at end of file
++end
