@@ -8,14 +8,18 @@
           <center style="font-size:30px;">旅行計画案(DETAILS)</center>
         </p>
         <div class="p-3"></div>
+        <div class="images">
+          <img src="/ogasuta458A7873_TP_V4.jpg" alt="画像" width="400" height="300" >
+        </div>
+        </br>
         <form>
-          <label for="name" class="col-sm-2">年・月・日・時間</label>
+          <label for="name" class="col-md-2 offset-md-7">日程</label>
           　<%= @plan.time.strftime('%Y-%m-%d %T') %>
           </br>
-          <label for="schedule" class="col-sm-2">スケジュール</label>
+          <label for="schedule" class="col-md-2 offset-md-7">スケジュール</label>
           　<%= @plan.schedule %>
           </br>
-          <label for="meal" class="col-sm-2">食事(朝・昼・夜)</label>
+          <label for="meal" class="col-md-2 offset-md-7">食事(朝・昼・夜)</label>
             <% if @plan.meal == "0" %>
               <%= '  ' %>
             <% elsif @plan.meal == "1" %>
@@ -25,16 +29,19 @@
             <% else %>
               <%= '夜' %>
             <% end %>
-          </br>　
-          <label for="city_name" class="col-sm-2">都市名</label>
+          </br>
+          <label for="city_name" class="col-md-2 offset-md-7">都市名</label>
             <%= @plan.city_name %>
           </br>
-          <label for="lodgment_target_name" class="col-sm-2">宿泊先名</label>
+          <label for="lodgment_target_name" class="col-md-2 offset-md-7">宿泊先名</label>
             <%= @plan.lodgment_target_name %>
           </br>
         </form>
-        <%= link_to " edit", edit_users_plan_path, class: "btn btn-primary fas fa-edit" %>
-        <%= link_to " delete", users_plan_path(@plan), method: :delete, class: "btn btn-danger fas fa-trash-alt", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
+        </br>
+        <div class="col-md-6 offset-md-7">
+          <%= link_to " edit", edit_users_plan_path, class: "btn btn-primary fas fa-edit" %>
+          <%= link_to " delete", users_plan_path(@plan), method: :delete, class: "btn btn-danger fas fa-trash-alt", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
+        </div>
       </div>
     </div>
   </div>
