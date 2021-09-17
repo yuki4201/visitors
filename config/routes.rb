@@ -18,12 +18,12 @@ Rails.application.routes.draw do
   namespace :admin do
     
     patch '/posts' => 'posts#update'
-    resources :posts, only: [:index, :edit, :update, :destroy]
+    resources :posts, only: [:index, :show, :edit, :update, :destroy]
     
     patch '/plans' => 'plans#update'
     resources :plans, only: [:index, :edit, :update, :destroy]
     
-    resources :users, only: [:index, :show, :show, :edit, :update]
+    resources :users, only: [:index, :show, :edit, :update]
     
     get '/:id/unsubscribe' => 'users#unsubscribe', as: 'confirm_unsubscribe'
     get '/:id/withdraw' => 'users#withdraw'

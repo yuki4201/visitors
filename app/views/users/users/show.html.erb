@@ -1,9 +1,9 @@
-<main>
+<main class="mt-5">
   <p id="notice"></p>
   <div class="container">
     <div class="row">
       <div class="col">
-        <div class="p-5"></div>
+        <div class="p-4"></div>
         <p class="text-center">
           <center style="font-size:30px;">マイページ</center>
         </p>
@@ -25,8 +25,8 @@
               </tr>
             </table>
             <div class="p-1"></div>
-            <%= link_to "旅行計画案へ", users_plans_path, class: "btn btn-success" %>
-            <%= link_to "ユーザ情報を編集する", edit_users_user_path(@user), class: "btn btn-primary" %>
+            <%= link_to " 旅行計画案へ", users_plans_path, class: "btn btn-success fas fa-clipboard-list" %>
+            <%= link_to " ユーザ情報を編集する", edit_users_user_path(@user), class: "btn btn-primary fas fa-user-edit" %>
           </div>
         </div>
       </div>

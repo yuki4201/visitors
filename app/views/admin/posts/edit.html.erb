@@ -5,7 +5,7 @@
       <div class="col">
         <div class="p-4"></div>
         <p class="text-center">
-          <center style="font-size:30px;">投稿を編集</center>
+          <center style="font-size:30px;">投稿を編集 -ADMIN-</center>
         </p>
         <%= form_with model: @post, url:admin_posts_path, local:true do |f| %>
         </br>
@@ -58,7 +58,7 @@
           <label class="col-sm-2"></label>
           <div class="col-sm-12">
             <%= f.hidden_field :id, :value => params[:id] %>
-            <%= f.submit "UPDATE!", class: "btn btn-success btn-block fas fa-edit" %>
+            <%= f.submit "UPDATE!", class: "btn btn-success btn-block" %>
           </div>
         </div>
         <% end %>

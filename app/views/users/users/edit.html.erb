@@ -1,9 +1,9 @@
-<main>
+<main class="mt-5">
   <p id="notice"></p>
   <div class="container">
     <div class="row">
       <div class="col">
-        <div class="p-5"></div>
+        <div class="p-4"></div>
         <p class="text-center">
           <center style="font-size:30px;">ユーザ情報編集</center>
         </p>
@@ -21,8 +21,13 @@
                 <%= f.text_field :email, size:30 %>
               </div>
             </div>
-            <%= f.submit "更新", class: "btn btn-success" %>
-            <%= link_to "退会", users_confirm_unsubscribe_path, class: "btn btn-danger" %>
+            <div class="form-group row">
+              <label for="email" class="col-sm-2"></label>
+              <div class="col-sm-10">
+                <%= f.submit "UPDATE!", class: "btn btn-success" %>
+                <%= link_to "退会確認画面へ", users_confirm_unsubscribe_path, class: "btn btn-danger" %>
+              </div>
+            </div>
           </form>
         <% end %>
       </div>

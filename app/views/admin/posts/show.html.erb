@@ -5,12 +5,12 @@
       <div class="col">
         <div class="p-4">
         <p class="text-center"></div>
-          <center style="font-size:30px;">投稿詳細</center>
+          <center style="font-size:30px;">投稿詳細 -ADMIN-</center>
         </p>
         <div class="p-3"></div>
         <form>
           <label for="image" class="col-sm-2"></label>
-            <%= attachment_image_tag @post :image %>
+            <%= attachment_image_tag @post, :image, :fill, 400, 300, format: 'jpeg' %>
           </br>
           <label for="genre" class="col-sm-2">ジャンル</label>
             <% if @post.genre == "1" %>
@@ -40,6 +40,8 @@
           <label for="url" class="col-sm-2">掲載元URL</label>
             <%= @post.url %>
           </br>
+            <%= link_to " edit", edit_admin_post_path, class: "btn btn-primary fas fa-edit" %>
+            <%= link_to " delete", admin_post_path(@post), method: :delete, class: "btn btn-danger fas fa-trash-alt", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
         </div>
       </div>
     </div>

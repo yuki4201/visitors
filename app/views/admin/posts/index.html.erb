@@ -5,7 +5,7 @@
       <div class="col">
         <div class="p-4"></div>
         <p class="text-center">
-          <center style="font-size:30px;">LIST UP</center>
+          <center style="font-size:30px;">LIST UP -ADMIN-</center>
         </p>
           <table class="table table-hover">
           <thead>
@@ -24,7 +24,7 @@
             <tbody>
               <% @posts.each do |post| %>
               <tr>
-                <td><%= link_to post.id, users_post_path(post) %></td>
+                <td><%= link_to post.id, admin_post_path(post) %></td>
                 <td><%= attachment_image_tag post, :image, format: 'jpeg', size:"30x30" %></td>
                 <td>
                 <% if post.genre == "1" %>
@@ -45,8 +45,8 @@
                   <% end %>
                 </td>
                 <td><%= post.url %></td>
-                <td><%= link_to "edit", edit_admin_post_path(post), class: "btn btn-primary fas fa-edit" %>
-                    <%= link_to "delete", admin_post_path(post), method: :delete, class: "btn btn-danger fas fa-trash-alt", "data-confirm" => "この投稿を削除します。よろしいですか？" %></td>
+                <td><%= link_to " edit", edit_admin_post_path(post), class: "btn btn-primary fas fa-edit" %>
+                    <%= link_to " delete", admin_post_path(post), method: :delete, class: "btn btn-danger fas fa-trash-alt", "data-confirm" => "この投稿を削除します。よろしいですか？" %></td>
               </tr>
               <% end %>
             </tbody>

@@ -49,22 +49,22 @@
           <div class="col-12">
           <% if user_signed_in? %>
         　<label for="post" class="col-mt-2"></label>
-        　　<%= link_to "投稿一覧へ【LIST UP】", users_posts_path, class: "btn btn-primary" %>
+        　　<%= link_to " 投稿一覧へ【LIST UP】", users_posts_path, class: "btn btn-primary fas fa-list-ul" %>
         　<label for="new" class="col-mt-2"></label>
-        　　<%= link_to "新しく投稿【NEW】", new_users_post_path, class: "btn btn-success" %>
+        　　<%= link_to " 新規投稿【NEW】", new_users_post_path, class: "btn btn-success fas fa-plus" %>
         　<label for="plan" class="col-mt-2"></label>
-        　　<%= link_to "旅行の計画を立てる【PLAN】", new_users_plan_path, class: "btn btn-dark" %>
+        　　<%= link_to " 旅行計画【PLAN】", new_users_plan_path, class: "btn btn-dark fas fa-plus" %>
         　<% else %>
         　<label for="registration" class="col-mt-2"></label>
-            <%= link_to "新規登録", new_user_registration_path, class: "btn btn-primary" %>
+            <%= link_to " 新規登録", new_user_registration_path, class: "btn btn-primary btn-lg fas fa-user-plus" %>
           <label for="session" class="col-mt-2"></label>
-            <%= link_to "ログイン", new_user_session_path, class: "btn btn-primary" %>
+            <%= link_to " ログイン", new_user_session_path, class: "btn btn-primary btn-lg fas fa-sign-in-alt" %>
         　<% end %>
         </div>
         </br>
         <div class="col-12">
         <div class="p-2"></div>
-        <center>本アプリは一人旅を通じて利用者、観光業界ともに需要のある一人旅計画管理アプリです</center>
+        <center>本アプリは一人旅を計画するための管理アプリです</center>
         </br>
         <center>旅先で実際に泊まった宿を共有又は投稿したり、</center>
         <center>一人旅行に向けた旅行計画を立てることができます</center>
