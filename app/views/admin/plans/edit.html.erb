@@ -1,0 +1,53 @@
+<main class="mt-5">
+  <p id="notice"></p>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="p-5"></div>
+        <p class="text-center">
+          <center style="font-size:30px;">旅行計画案編集 -ADMIN-</center>
+        </p>
+        <%= form_with model: @plan, url:admin_plans_path, local:true do |f| %>
+        </br>
+        <div class="form-group row">
+          <label for="time" class="col-md-3 offset-md-2">日程</label>
+          <div class="col-sm-7">
+            <%= f.datetime_field :time %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="schedule" class="col-md-3 offset-md-2">スケジュール</label>
+          <div class="col-sm-7">
+            <%= f.text_area :schedule %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="meal" class="col-md-3 offset-md-2">食事(朝・昼・夜)</label>
+          <div class="col-sm-7">
+            <%= f.select :meal, { ' ':0,'朝':1, '昼':2,'夜':3 }, {include_blank: '---'} %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="city_name" class="col-md-3 offset-md-2">都市名</label>
+          <div class="col-sm-7">
+            <%= f.text_field :city_name, size:30 %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="lodgment_target_name" class="col-md-3 offset-md-2">宿泊先名</label>
+          <div class="col-sm-7">
+            <%= f.text_field :lodgment_target_name, size:30 %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="" class="col-md-3 offset-md-2"></label>
+          <div class="col-sm-12">
+          <%= f.hidden_field :id, :value => params[:id] %>
+          <%= f.submit "UPLOAD!", class: "btn btn-success btn-block" %></br>
+        </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,47 @@
+<main class="mt-5">
+  <p id="notice"></p>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="p-4"></div>
+        <p class="text-center">
+          <center style="font-size:30px;">旅行計画案</center>
+        </p>
+        <table class="table table-hover" border="2">
+          <thead>
+            <tr>
+              <th>日程</th>
+              <th>スケジュール</th>
+              <th>食事</th>
+              <th>都市名</th>
+              <th>宿泊先名</th>
+            </tr>
+          </thead>
+            <tbody>
+              <% @plans.each do |plan| %>
+              <% if plan.user_id == current_user.id %>
+              <tr>
+                <td><%= link_to plan.time.strftime('%Y-%m-%d %T'), users_plan_path(plan) %></td>
+                <td><%= plan.schedule %></td>
+                <td>
+                  <% if plan.meal == "0" %>
+                   <%= ' ' %>
+                  <% elsif plan.meal == "1" %>
+                    <%= '朝' %>
+                  <% elsif plan.meal == "2" %>
+                    <%= '昼' %>
+                  <% else %>
+                    <%= '夜' %>
+                  <% end %>
+                </td>
+                <td><%= plan.city_name %></td>
+                <td><%= plan.lodgment_target_name %></td>
+              </tr>
+              <% end %>
+              <% end %>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+</main>

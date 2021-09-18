@@ -1,0 +1,67 @@
+<main class="mt-5">
+  <p id="notice"></p>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="p-4"></div>
+        <p class="text-center">
+          <center style="font-size:30px;">新規投稿</center>
+        </p>
+        <%= form_with model: @post, url:users_posts_path(@post), local:true do |f| %>
+        </br>
+        <div class="form-group row">
+          <label for="inputImage" class="col-md-2 offset-md-2">画像</label>
+          <div class="col-sm-8">
+            <%= f.attachment_field :image, placeholder: "画像" %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="genre" class="col-md-2 offset-md-2">ジャンル</label>
+          <div class="col-sm-8">
+            <%= f.select :genre, { 'ホテル':1, '旅館':2,'民宿':3 }, {include_blank: '--選択してください--'} %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="facility_name" class="col-md-2 offset-md-2">施設名</label>
+          <div class="col-sm-8">
+            <%= f.text_field :facility_name, size:50, placeholder: "宿泊先の名前を入力" %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="address" class="col-md-2 offset-md-2">所在地</label>
+          <div class="col-sm-8">
+            <%= f.text_field :address, size:50, placeholder: "都道府県名を入力" %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="review" class="col-md-2 offset-md-2">レビュー</label>
+          <div class="col-sm-8">
+            <%= f.text_field :review, size:50, placeholder: "レビューを入力" %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="breakfast_existence" class="col-md-2 offset-md-2">朝食の有無</label>
+          <div class="col-sm-8">
+            <%= f.radio_button :breakfast_existence, 1 %>
+            <%= f.label :breakfast_existence, '朝食有り', value: true %>
+            <%= f.radio_button :breakfast_existence, 0 %>
+            <%= f.label :breakfast_existence, '朝食無し', value: false %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="url" class="col-md-2 offset-md-2">掲載元URL</label>
+          <div class="col-sm-8">
+            <%= f.text_field :url, size:50, placeholder: "予約サイト、宿泊先のHPのリンクを入力"  %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-2 offset-md-2"></label>
+          <div class="col-sm-12">
+          <%= f.submit "UPLOAD!", class: "btn btn-success btn-block" %></br>
+        </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

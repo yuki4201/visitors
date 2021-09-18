@@ -1,0 +1,18 @@
+<main class="mt-5">
+  <p id="notice"></p>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="p-5"></div>
+        <p class="text-center">
+          <center style="font-size:30px;">本アプリから退会します。よろしいですか？</center>
+        </p>
+        </br>
+        <p class="text-center">
+          <%= link_to "退会しない", users_my_page_path, class: "btn btn-primary" %>
+          <%= link_to "退会する", users_withdraw_path(@user), method: :patch, class: "btn btn-danger", "data-confirm" => "本アプリから退会します。よろしいですか？" %>
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
