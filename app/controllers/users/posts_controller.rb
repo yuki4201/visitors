@@ -1,4 +1,6 @@
 class Users::PostsController < ApplicationController
+  
+  before_action :authenticate_user!, only: [:new, :show]
     
   def index
     @posts = Post.all

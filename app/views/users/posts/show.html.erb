@@ -45,9 +45,11 @@
         </br>
         <div class="col-md-6 offset-md-7">
           <% if @post.user_id == current_user.id %>
+            <%= link_to " back", users_posts_path, class: "btn btn-info fas fa-undo-alt" %>
             <%= link_to " edit", edit_users_post_path, class: "btn btn-primary fas fa-edit" %>
             <%= link_to " delete", users_post_path(@post), method: :delete, class: "btn btn-danger fas fa-trash-alt", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
           <% else %>
+            <%= link_to " back", users_posts_path, class: "btn btn-info fas fa-undo-alt" %>
           <% end %>
         </div>
       </div>
