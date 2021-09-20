@@ -39,6 +39,7 @@
         </form>
         </br>
         <div class="col-md-6 offset-md-7">
+          <%= link_to " back", users_plans_path, class: "btn btn-info fas fa-undo-alt" %>
           <%= link_to " edit", edit_users_plan_path, class: "btn btn-primary fas fa-edit" %>
           <%= link_to " delete", users_plan_path(@plan), method: :delete, class: "btn btn-danger fas fa-trash-alt", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
         </div>
