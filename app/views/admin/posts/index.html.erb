@@ -27,13 +27,13 @@
                 <td><%= link_to post.id, admin_post_path(post) %></td>
                 <td><%= attachment_image_tag post, :image, format: 'jpeg', size:"30x30" %></td>
                 <td>
-                <% if post.genre == "1" %>
-                  <%= 'ホテル' %>
-                <% elsif post.genre == "2" %>
-                  <%= '旅館' %>
-                <% else %>
-                  <%= '民宿' %>
-                <% end %>
+                  <% if post.genre == "1" %>
+                    <%= 'ホテル' %>
+                  <% elsif post.genre == "2" %>
+                    <%= '旅館' %>
+                  <% else %>
+                    <%= '民宿' %>
+                  <% end %>
                 </td>
                 <td><%= post.facility_name %></td>
                 <td><%= post.address %></td>

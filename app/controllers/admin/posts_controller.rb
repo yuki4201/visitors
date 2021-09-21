@@ -28,7 +28,7 @@ class Admin::PostsController < ApplicationController
   private
   
   def post_params
-    params.require(:post).permit(:facility_name, :address, :genre, :review, :url, :breakfast_existence)
+    params.require(:post).permit(:image, :facility_name, :address, :genre, :review, :url, :breakfast_existence)
   end
   
 end

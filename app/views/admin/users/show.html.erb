@@ -27,7 +27,7 @@
               <% @posts.each do |post| %>
               <tr>
                 <td><%= link_to post.id, admin_post_path(post) %></td>
-                <td><%= attachment_image_tag post, :image, format: 'jpeg', size:"30x30" %></td>
+                <td><%= attachment_image_tag post, :image, size:"30x30", format: 'jpeg' %></td>
                 <td>
                   <% if post.genre == "1" %>
                     <%= 'ホテル' %>
