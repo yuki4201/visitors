@@ -7,6 +7,10 @@
         <p class="text-center">
           <center style="font-size:30px;">LIST UP</center>
         </p>
+        <% if user_signed_in? %>
+          <%= link_to " 新規投稿【NEW】", new_users_post_path, class: "btn btn-success fas fa-plus" %>
+        <% end %>
+        <div class="p-2"></div>
         <table class="table table-hover">
           <thead>
             <tr>
@@ -17,11 +21,11 @@
               <th>掲載元URL</th>
             </tr>
           </thead>
-           <tbody>
-             <% @posts.each do |post| %>
-             <tr>
-               <td><%= link_to post.id, users_post_path(post) %></td>
-               <td>
+            <tbody>
+            <% @posts.each do |post| %>
+            <tr>
+              <td><%= link_to post.id, users_post_path(post) %></td>
+              <td>
                 <% if post.genre == "1" %>
                  <%= 'ホテル' %>
                 <% elsif post.genre == "2" %>
@@ -29,13 +33,13 @@
                 <% else %>
                   <%= '民宿' %>
                 <% end %>
-               </td>
-               <td><%= post.facility_name %></td>
-               <td><%= post.address %></td>
-               <td><%= post.url %></td>
-             </tr>
-             <% end %>
-           </tbody>
+              </td>
+              <td><%= post.facility_name %></td>
+              <td><%= post.address %></td>
+              <td><%= post.url %></td>
+            </tr>
+            <% end %>
+          </tbody>
         </table>
       </div>
     </div>
