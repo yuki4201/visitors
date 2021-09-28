@@ -18,6 +18,7 @@
               <th>ジャンル</th>
               <th>施設名</th>
               <th>所在地</th>
+              <th>朝食の有無</th>
               <th>掲載元URL</th>
             </tr>
           </thead>
@@ -27,7 +28,7 @@
               <td><%= link_to post.id, users_post_path(post) %></td>
               <td>
                 <% if post.genre == "1" %>
-                 <%= 'ホテル' %>
+                  <%= 'ホテル' %>
                 <% elsif post.genre == "2" %>
                   <%= '旅館' %>
                 <% else %>
@@ -36,6 +37,13 @@
               </td>
               <td><%= post.facility_name %></td>
               <td><%= post.address %></td>
+              <td>
+                <% if post.breakfast_existence == "1" %>
+                  <%= '朝食有り' %>
+                <% else %>
+                  <%= '朝食無し' %>
+                <% end %>
+              </td>
               <td><%= post.url %></td>
             </tr>
             <% end %>

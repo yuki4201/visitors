@@ -24,34 +24,31 @@
         <div class="form-group row">
           <label for="facility_name" class="col-md-3 offset-md-2">施設名</label>
           <div class="col-sm-7">
-            <%= f.text_field :facility_name %>
+            <%= f.text_field :facility_name, size:50 %>
           </div>
         </div>
         <div class="form-group row">
           <label for="address" class="col-md-3 offset-md-2">所在地</label>
           <div class="col-sm-7">
-            <%= f.text_field :address %>
+            <%= f.text_field :address, size:50 %>
           </div>
         </div>
         <div class="form-group row">
           <label for="review" class="col-md-3 offset-md-2">レビュー</label>
           <div class="col-sm-7">
-            <%= f.text_area :review %>
+            <%= f.text_area :review, size:50 %>
           </div>
         </div>
         <div class="form-group row">
           <label for="breakfast_existence" class="col-md-3 offset-md-2">朝食の有無</label>
           <div class="col-sm-7">
-            <%= f.radio_button :breakfast_existence, value: true %>
-            <%= f.label :breakfast_existence, '朝食有り', value: true %>
-            <%= f.radio_button :breakfast_existence, value: false %>
-            <%= f.label :breakfast_existence, '朝食無し', value:false %>
+            <%= f.select :breakfast_existence, {'朝食有り':1, '朝食無し':2}, {include_blank: '--選択してください--'} %>
           </div>
         </div>
         <div class="form-group row">
           <label for="url" class="col-md-3 offset-md-2">掲載元URL</label>
           <div class="col-sm-7">
-            <%= f.text_field :url %>
+            <%= f.text_field :url, size:50 %>
           </div>
         </div>
         <div class="form-group row">

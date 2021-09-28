@@ -10,5 +10,7 @@ class Post < ApplicationRecord
   validates :url, presence: true
   
   belongs_to :users, optional: true
+  
+  # enum breakfast_existence: {no_breakfast: '0', breakfast_available: '1' }
 
 end

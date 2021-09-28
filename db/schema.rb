@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(version: 2021_09_09_135507) do
     t.string "facility_name"
     t.string "address"
     t.string "genre"
+    t.string "breakfast_existence"
     t.integer "user_id"
     t.text "review"
     t.text "url"
-    t.boolean "breakfast_existence", default: true
   end
 
   create_table "users", force: :cascade do |t|

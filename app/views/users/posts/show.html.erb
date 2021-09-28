@@ -34,10 +34,10 @@
           </div>
           </br>
           <label for="breakfast_existence" class="col-md-2">朝食の有無</label>
-            <% if @post.breakfast_existence? %>
-              朝食有り
+            <% if @post.breakfast_existence == "1" %>
+              <%= '朝食有り' %>
             <% else %>
-              朝食無し
+              <%= '朝食無し' %>
             <% end %>
           </br>
           <label for="url" class="col-md-2">掲載元URL</label>

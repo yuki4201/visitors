@@ -38,10 +38,11 @@
                 <td><%= post.facility_name %></td>
                 <td><%= post.address %></td>
                 <td><%= post.review %></td>
-                <td><% if post.breakfast_existence? %>
-                  朝食有り
+                <td>
+                  <% if post.breakfast_existence == "1" %>
+                    <%= '朝食有り' %>
                   <% else %>
-                  朝食無し
+                    <%= '朝食無し' %></td>
                   <% end %>
                 </td>
                 <td><%= post.url %></td>

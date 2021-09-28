@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      post:
+    attributes:
+      post:
+        image: 画像
+        genre: ジャンル
+        facility_name: 施設名
+        address: 所在地
+        review: レビュー
+        breakfast_existence: 朝食の有無
+        url: 掲載元URL
