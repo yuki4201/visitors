@@ -313,6 +313,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   kaminari (~> 1.2.1)
+  listen
   mysql2
   omniauth
   omniauth-google-oauth2
