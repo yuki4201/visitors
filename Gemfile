@@ -67,3 +67,8 @@ group :production do
   gem 'mysql2'
 end
 gem 'rails-i18n'
+group :development do
+
+  gem 'listen'
+
+end
