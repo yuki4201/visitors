@@ -4,10 +4,10 @@
     <div class="row">
       <div class="col">
         <div class="p-4"></div>
-        <p class="text-center">
-          <center style="font-size:30px;">旅行計画案</center>
-        </p>
-        <%= link_to " 旅行計画【PLAN】", new_users_plan_path, class: "btn btn-dark fas fa-plus" %>
+        <div class="text-center">
+          <p style="font-size:30px;">旅行計画案</p>
+        </div>
+        <%= link_to " 旅行計画【PLAN】", new_plan_path, class: "btn btn-dark fas fa-plus" %>
         <div class="p-2"></div>
         <table class="table table-hover" border="2">
           <thead>
@@ -23,14 +23,14 @@
               <% @plans.each do |plan| %>
               <% if plan.user_id == current_user.id %>
               <tr>
-                <td><%= link_to plan.time.strftime('%Y-%m-%d %T'), users_plan_path(plan) %></td>
+                <td><%= link_to plan.time.strftime('%Y-%m-%d %T'), plan_path(plan) %></td>
                 <td><%= plan.schedule %></td>
                 <td>
-                  <% if plan.meal == "0" %>
+                  <% if plan.meal == 'nothing' %>
                    <%= ' ' %>
-                  <% elsif plan.meal == "1" %>
+                  <% elsif plan.meal == 'morning' %>
                     <%= '朝' %>
-                  <% elsif plan.meal == "2" %>
+                  <% elsif plan.meal == 'noon' %>
                     <%= '昼' %>
                   <% else %>
                     <%= '夜' %>

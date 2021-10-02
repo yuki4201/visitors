@@ -4,11 +4,21 @@
     <div class="row">
       <div class="col">
         <div class="p-4"></div>
-        <p class="text-center">
-          <center style="font-size:30px;">旅行計画案新規作成</center>
-        </p>
-        </br>
-          <%= form_with model: @plan, url:users_plans_path(@plan), local:true do |f| %>
+        <% if @plan.errors.any? %>
+          <div id="error_explanation" class="alert alert-danger">
+            <h2><%= pluralize(@plan.errors.count, "項目") %> への記入が完了していません:</h2>
+            <ul>
+              <% @plan.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="text-center">
+          <p style="font-size:30px;">旅行計画案新規作成</p>
+        </div>
+        <br />
+          <%= form_with model: @plan, url:plans_path(@plan), local:true do |f| %>
             <div class="form-group row">
               <label for="time" class="col-md-3 offset-md-2">日程</label>
               <div class="col-sm-7">
@@ -24,7 +34,7 @@
             <div class="form-group row">
               <label for="meal" class="col-md-3 offset-md-2">食事(朝・昼・夜)</label>
               <div class="col-sm-7">
-                <%= f.select :meal, { ' ':0,'朝':1, '昼':2,'夜':3 }, {include_blank: '食事を取る場合に選択、それ以外は空白'} %>
+                <%= f.select :meal, { ' ':'nothing','朝':'morning', '昼':'noon','夜':'night' }, {include_blank: '食事を取る場合に選択、それ以外は空白'} %>
               </div>
             </div>
             <div class="form-group row">
@@ -42,7 +52,7 @@
             <div class="form-group row">
               <label for="" class="col-md-3 offset-md-2"></label>
               <div class="col-sm-12">
-              <%= f.submit "UPLOAD!", class: "btn btn-success btn-block" %></br>
+              <%= f.submit "UPLOAD!", class: "btn btn-success btn-block" %><br />
             </div>
           <% end %>
         </div>

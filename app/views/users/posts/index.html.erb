@@ -4,11 +4,11 @@
     <div class="row">
       <div class="col">
         <div class="p-4"></div>
-        <p class="text-center">
-          <center style="font-size:30px;">LIST UP</center>
-        </p>
+        <div class="text-center">
+          <p style="font-size:30px;">LIST UP</p>
+        </div>
         <% if user_signed_in? %>
-          <%= link_to " 新規投稿【NEW】", new_users_post_path, class: "btn btn-success fas fa-plus" %>
+          <%= link_to " 新規投稿【NEW】", new_post_path, class: "btn btn-success fas fa-plus" %>
         <% end %>
         <div class="p-2"></div>
         <table class="table table-hover">
@@ -20,16 +20,17 @@
               <th>所在地</th>
               <th>朝食の有無</th>
               <th>掲載元URL</th>
+              <th></th>
             </tr>
           </thead>
             <tbody>
             <% @posts.each do |post| %>
             <tr>
-              <td><%= link_to post.id, users_post_path(post) %></td>
+              <td><%= post.id %></td>
               <td>
-                <% if post.genre == "1" %>
+                <% if post.genre == 'hotel' %>
                   <%= 'ホテル' %>
-                <% elsif post.genre == "2" %>
+                <% elsif post.genre == 'ryokan' %>
                   <%= '旅館' %>
                 <% else %>
                   <%= '民宿' %>
@@ -38,13 +39,16 @@
               <td><%= post.facility_name %></td>
               <td><%= post.address %></td>
               <td>
-                <% if post.breakfast_existence == "1" %>
+                <% if post.breakfast_existence == 'yes' %>
                   <%= '朝食有り' %>
                 <% else %>
                   <%= '朝食無し' %>
                 <% end %>
               </td>
               <td><%= post.url %></td>
+              <% if user_signed_in? %><i class="fas fa-info-square"></i>
+              <td><%= link_to " 詳細", post_path(post), class: "btn btn-info fas fa-info" %></td>
+              <% end %>
             </tr>
             <% end %>
           </tbody>

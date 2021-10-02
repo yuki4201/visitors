@@ -11,48 +11,48 @@
         <div class="img-center">
           <%= attachment_image_tag @post, :image, :fill, 600, 400, format: 'jpeg' %>
         </div>
-        </br>
+        <br />
         <form>
           <label for="genre" class="col-md-2">ジャンル</label>
-            <% if @post.genre == "1" %>
+            <% if @post.genre == 'hotel' %>
               <%= 'ホテル' %>
-            <% elsif @post.genre == "2" %>
+            <% elsif @post.genre == 'ryokan' %>
               <%= '旅館' %>
             <% else %>
               <%= '民宿' %>
             <% end %>
-          </br>
+          <br />
           <label for="facility_name" class="col-md-2">施設名</label>
             <%= @post.facility_name %>
-          </br>
+          <br />
           <label for="address" class="col-md-2">所在地</label>
             <%= @post.address %>
-          </br>
+          <br />
           <label for="review" class="col-md-12">レビュー</label>
           <div class="col-sm-12">
             <%= @post.review %>
           </div>
-          </br>
+          <br />
           <label for="breakfast_existence" class="col-md-2">朝食の有無</label>
-            <% if @post.breakfast_existence == "1" %>
+            <% if @post.breakfast_existence == 'yes' %>
               <%= '朝食有り' %>
             <% else %>
               <%= '朝食無し' %>
             <% end %>
-          </br>
+          <br />
           <label for="url" class="col-md-2">掲載元URL</label>
             <%= @post.url %>
-          </br>
+          <br />
         </form>
-        </br>
+        <br />
         <div class="form-row text-center">
         <div class="col-12">
           <% if @post.user_id == current_user.id %>
-            <%= link_to " back", users_posts_path, class: "btn btn-info fas fa-undo-alt" %>
-            <%= link_to " edit", edit_users_post_path, class: "btn btn-primary fas fa-edit" %>
-            <%= link_to " delete", users_post_path(@post), method: :delete, class: "btn btn-danger fas fa-trash-alt", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
+            <%= link_to " back", posts_path, class: "btn btn-info fas fa-undo-alt" %>
+            <%= link_to " edit", edit_post_path, class: "btn btn-primary fas fa-edit" %>
+            <%= link_to " delete", post_path(@post), method: :delete, class: "btn btn-danger fas fa-trash-alt", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
           <% else %>
-            <%= link_to " back", users_posts_path, class: "btn btn-info fas fa-undo-alt" %>
+            <%= link_to " back", posts_path, class: "btn btn-info fas fa-undo-alt" %>
           <% end %>
         </div>
       </div>

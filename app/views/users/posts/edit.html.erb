@@ -4,11 +4,11 @@
     <div class="row">
       <div class="col">
         <div class="p-4"></div>
-        <p class="text-center">
-          <center style="font-size:30px;">投稿を編集</center>
-        </p>
-        <%= form_with model: @post, url:users_posts_path, local:true do |f| %>
-        </br>
+        <div class="text-center">
+          <p style="font-size:30px;">投稿を編集</p>
+        </div>
+        <%= form_with model: @post, url:posts_path, local:true do |f| %>
+        <br />
           <div class="form-group row">
             <label for="inputImage" class="col-md-2 offset-md-2">画像</label>
             <div class="col-sm-8">
@@ -18,7 +18,7 @@
           <div class="form-group row">
             <label for="genre" class="col-md-2 offset-md-2">ジャンル</label>
             <div class="col-sm-8">
-              <%= f.select :genre, { 'ホテル':1, '旅館':2,'民宿':3 }, {include_blank: '--選択してください--'} %>
+              <%= f.select :genre, { 'ホテル':'hotel', '旅館':'ryokan','民宿':'guest_house' }, {include_blank: '--選択してください--'} %>
             </div>
           </div>
           <div class="form-group row">
@@ -42,7 +42,7 @@
           <div class="form-group row">
             <label for="breakfast_existence" class="col-md-2 offset-md-2">朝食の有無</label>
             <div class="col-sm-8">
-              <%= f.select :breakfast_existence, {'朝食有り':1, '朝食無し':2}, {include_blank: '--選択してください--'} %>
+              <%= f.select :breakfast_existence, { '朝食有り':'yes', '朝食無し':'no' }, {include_blank: '--選択してください--'} %>
             </div>
           </div>
           <div class="form-group row">

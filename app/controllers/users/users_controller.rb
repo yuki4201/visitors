@@ -11,7 +11,7 @@ class Users::UsersController < ApplicationController
   def update
     @user = current_user
     @user.update(user_params)
-    redirect_to users_my_page_path
+    redirect_to my_page_path
   end
   
   def unsubscribe

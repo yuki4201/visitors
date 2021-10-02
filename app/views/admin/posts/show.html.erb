@@ -4,47 +4,47 @@
     <div class="row">
       <div class="col">
         <div class="p-4">
-        <p class="text-center"></div>
-          <center style="font-size:30px;">投稿詳細 -ADMIN-</center>
-        </p>
+        <div class="text-center"></div>
+          <p style="font-size:30px;">投稿詳細 -ADMIN-</p>
+        </div>
         <div class="p-3"></div>
         <div class="img-center">
           <%= attachment_image_tag @post, :image, :fill, 600, 400, format: 'jpeg' %>
         </div>
-        </br>
+        <br />
         <form>
           <label for="genre" class="col-md-2">ジャンル</label>
-            <% if @post.genre == "1" %>
+            <% if @post.genre == 'hotel' %>
               <%= 'ホテル' %>
-            <% elsif @post.genre == "2" %>
+            <% elsif @post.genre == 'ryokan' %>
               <%= '旅館' %>
             <% else %>
               <%= '民宿' %>
             <% end %>
-          </br>
+          <br />
           <label for="facility_name" class="col-md-2">施設名</label>
             <%= @post.facility_name %>
-          </br>
+          <br />
           <label for="address" class="col-md-2">所在地</label>
             <%= @post.address %>
-          </br>
+          <br />
           <label for="review" class="col-md-12">レビュー</label>
           <div class="col-sm-12">
             <%= @post.review %>
           </div>
-          </br>
+          <br />
           <label for="breakfast_existence" class="col-md-2">朝食の有無</label>
-            <% if @post.breakfast_existence == "1" %>
+            <% if @post.breakfast_existence == 'yes' %>
               <%= '朝食有り' %>
             <% else %>
               <%= '朝食無し' %>
             <% end %>
-          </br>
+          <br />
           <label for="url" class="col-md-2">掲載元URL</label>
             <%= @post.url %>
-          </br>
+          <br />
         </form>
-        </br>
+        <br />
         <div class="form-row text-center">
           <div class="col-12">
           <%= link_to " back", admin_users_path, class: "btn btn-info fas fa-undo-alt" %>

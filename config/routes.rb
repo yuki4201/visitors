@@ -30,7 +30,7 @@ Rails.application.routes.draw do
     patch '/:id/withdraw' => 'users#withdraw' 
   end
 
-  namespace :users do
+  scope module: :users do
     
     get '/about' => 'homes#about'
     get '/my_page' => 'users#show'
@@ -50,4 +50,5 @@ Rails.application.routes.draw do
     patch '/withdraw' => 'users#withdraw' 
     
   end
+  
 end
