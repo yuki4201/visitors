@@ -50,16 +50,16 @@
           <div class="col-12">
           <% if user_signed_in? %>
         　<label for="post" class="col-mt-2"></label>
-        　　<%= link_to " 投稿一覧へ【LIST UP】", posts_path, class: "btn btn-primary fas fa-list-ul" %>
+        　　<%= link_to " 投稿一覧へ【LIST UP】", posts_path, class: "btn btn-primary shadow fas fa-list-ul" %>
         　<label for="new" class="col-mt-2"></label>
-        　　<%= link_to " 新規投稿【NEW】", new_post_path, class: "btn btn-success fas fa-plus" %>
+        　　<%= link_to " 新規投稿【NEW】", new_post_path, class: "btn btn-success shadow fas fa-plus" %>
         　<label for="plan" class="col-mt-2"></label>
-        　　<%= link_to " 旅行計画【PLAN】", new_plan_path, class: "btn btn-dark fas fa-plus" %>
+        　　<%= link_to " 旅行計画【PLAN】", new_plan_path, class: "btn btn-dark shadow fas fa-plus" %>
         　<% else %>
         　<label for="registration" class="col-mt-2"></label>
-            <%= link_to " 新規登録", new_user_registration_path, class: "btn btn-primary btn-lg fas fa-user-plus" %>
+            <%= link_to " 新規登録", new_user_registration_path, class: "btn btn-primary shadow btn-lg fas fa-user-plus" %>
           <label for="session" class="col-mt-2"></label>
-            <%= link_to " ログイン", new_user_session_path, class: "btn btn-primary btn-lg fas fa-sign-in-alt" %>
+            <%= link_to " ログイン", new_user_session_path, class: "btn btn-primary shadow btn-lg fas fa-sign-in-alt" %>
         　<% end %>
         </div>
         <div class="p-3"></div>

@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <div class="p-4"></div>
+        <div class="p-2"></div>
         <% if @plan.errors.any? %>
           <div id="error_explanation" class="alert alert-danger">
             <h2><%= pluralize(@plan.errors.count, "項目") %> への記入が完了していません:</h2>
@@ -14,9 +14,7 @@
             </ul>
           </div>
         <% end %>
-        <div class="text-center">
-          <p style="font-size:30px;">旅行計画案新規作成</p>
-        </div>
+          <h3 class="ribbon4">旅行計画案新規作成</h3>
         <br />
           <%= form_with model: @plan, url:plans_path(@plan), local:true do |f| %>
             <div class="form-group row">
@@ -53,6 +51,7 @@
               <label for="" class="col-md-3 offset-md-2"></label>
               <div class="col-sm-12">
               <%= f.submit "UPLOAD!", class: "btn btn-success btn-block" %><br />
+              </div>
             </div>
           <% end %>
         </div>

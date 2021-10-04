@@ -4,10 +4,10 @@
     <div class="row">
       <div class="col">
         <div class="p-5"></div>
-        <div class="text-center">
-          <p style="font-size:30px;">管理者ログイン</p>
+        <div class="ribbon21 col-md-6 offset-md-3">
+          <h3>管理者ログイン</h3>
         </div>
-        <br />
+        <div class="p-4"></div>
          
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
          
@@ -27,7 +27,7 @@
           <div class="form-group row">
             <label for="password" class="col-md-3 offset-md-2"></label>
             <div class="col-sm-7">
-              <%= f.submit "Log in", class: "btn btn-primary" %>
+              <%= f.submit "Log in", class: "btn btn-primary shadow" %>
             </div>
           </div>
         <% end %>

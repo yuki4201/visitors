@@ -4,11 +4,12 @@
     <div class="row">
       <div class="col">
         <div class="p-4"></div>
-        <div class="text-center">
-          <p style="font-size:30px;">LIST UP</p>
+        <div class="ribbon6 col-md-6 offset-md-3">
+          <h3>LIST UP</h3>
         </div>
+        <div class="p-3"></div>
         <% if user_signed_in? %>
-          <%= link_to " 新規投稿【NEW】", new_post_path, class: "btn btn-success fas fa-plus" %>
+          <%= link_to " 新規投稿【NEW】", new_post_path, class: "btn btn-success shadow fas fa-plus" %>
         <% end %>
         <div class="p-2"></div>
         <table class="table table-hover">
@@ -47,7 +48,7 @@
               </td>
               <td><%= post.url %></td>
               <% if user_signed_in? %><i class="fas fa-info-square"></i>
-              <td><%= link_to " 詳細", post_path(post), class: "btn btn-info fas fa-info" %></td>
+              <td><%= link_to " 詳細", post_path(post), class: "btn btn-info shadow fas fa-info" %></td>
               <% end %>
             </tr>
             <% end %>

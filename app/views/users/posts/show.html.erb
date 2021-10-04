@@ -4,9 +4,9 @@
     <div class="row">
       <div class="col">
         <div class="p-4">
-        <p class="text-center"></div>
-          <center style="font-size:30px;">投稿詳細</center>
-        </p>
+        <div class="ribbon6 col-md-6 offset-md-3">
+          <h3>DETAILS</h3>
+        </div>
         <div class="p-3"></div>
         <div class="img-center">
           <%= attachment_image_tag @post, :image, :fill, 600, 400, format: 'jpeg' %>
@@ -48,11 +48,11 @@
         <div class="form-row text-center">
         <div class="col-12">
           <% if @post.user_id == current_user.id %>
-            <%= link_to " back", posts_path, class: "btn btn-info fas fa-undo-alt" %>
-            <%= link_to " edit", edit_post_path, class: "btn btn-primary fas fa-edit" %>
-            <%= link_to " delete", post_path(@post), method: :delete, class: "btn btn-danger fas fa-trash-alt", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
+            <%= link_to " back", posts_path, class: "btn btn-info shadow fas fa-undo-alt" %>
+            <%= link_to " edit", edit_post_path, class: "btn btn-primary shadow fas fa-edit" %>
+            <%= link_to " delete", post_path(@post), method: :delete, class: "btn btn-danger shadow fas fa-trash-alt", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
           <% else %>
-            <%= link_to " back", posts_path, class: "btn btn-info fas fa-undo-alt" %>
+            <%= link_to " back", posts_path, class: "btn btn-info shadow fas fa-undo-alt" %>
           <% end %>
         </div>
       </div>

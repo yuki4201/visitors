@@ -14,8 +14,8 @@
             </ul>
           </div>
         <% end %>
-        <div class="text-center">
-          <p style="font-size:30px;">新規投稿</p>
+        <div class="ribbon6 col-md-6 offset-md-3">
+          <h3>NEW POST</h3>
         </div>
         <%= form_with model: @post, url:posts_path(@post), local:true do |f| %>
         <br />
@@ -64,7 +64,7 @@
         <div class="form-group row">
           <label class="col-md-2 offset-md-2"></label>
           <div class="col-sm-12">
-          <%= f.submit "UPLOAD!", class: "btn btn-success btn-block" %><br />
+          <%= f.submit "UPLOAD!", class: "btn btn-success btn-block shadow" %><br />
         </div>
         <% end %>
         </div>
