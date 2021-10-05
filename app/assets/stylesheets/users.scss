@@ -2,6 +2,67 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.ribbon7 {
+  display: inline-block;
+  position: relative;
+  height: 45px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.ribbon7:before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  bottom: -10px;
+  left: 91px;
+  z-index: -2;
+  border: 20px solid #56adf3;
+  border-left-color: transparent;
+}
+
+.ribbon7:after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  bottom: -10px;
+  right: 92px;
+  z-index: -2;
+  border: 20px solid #56adf3;
+  border-right-color: transparent;
+}
+
+.ribbon7 h3 {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0 20px;
+  line-height: 45px;
+  font-size: 25px;
+  color: #FFF;
+  background: #00BFFF;
+}
+
+.ribbon7 h3:before {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  border: none;
+  border-bottom: solid 10px transparent;
+  border-right: solid 15px #397eb5;
+}
+
+.ribbon7 h3:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  right: 0;
+  border: none;
+  border-bottom: solid 10px transparent;
+  border-left: solid 15px #397eb5;
+}
+
+
 .ribbon8 {
   display: inline-block;
   position: relative;
@@ -14,7 +75,7 @@
   position: absolute;
   width: 10px;
   bottom: -10px;
-  left: 67px;
+  left: 433px;
   z-index: -2;
   border: 20px solid #56adf3;
   border-left-color: transparent;
@@ -25,7 +86,7 @@
   position: absolute;
   width: 10px;
   bottom: -10px;
-  right: 68px;
+  right: 433px;
   z-index: -2;
   border: 20px solid #56adf3;
   border-right-color: transparent;
@@ -62,6 +123,7 @@
   border-left: solid 15px #397eb5;
 }
 
+
 .ribbon9 {
   display: inline-block;
   position: relative;
@@ -74,7 +136,7 @@
   position: absolute;
   width: 10px;
   bottom: -10px;
-  left: 40px;
+  left: 170px;
   z-index: -2;
   border: 20px solid #56adf3;
   border-left-color: transparent;
@@ -85,7 +147,7 @@
   position: absolute;
   width: 10px;
   bottom: -10px;
-  right: 41px;
+  right: 171px;
   z-index: -2;
   border: 20px solid #56adf3;
   border-right-color: transparent;
@@ -122,6 +184,125 @@
   border-left: solid 15px #397eb5;
 }
 
+.ribbon10 {
+  display: inline-block;
+  position: relative;
+  height: 45px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.ribbon10:before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  bottom: -10px;
+  left: 172px;
+  z-index: -2;
+  border: 20px solid #56adf3;
+  border-left-color: transparent;
+}
+
+.ribbon10:after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  bottom: -10px;
+  right: 173px;
+  z-index: -2;
+  border: 20px solid #56adf3;
+  border-right-color: transparent;
+}
+
+.ribbon10 h3 {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0 20px;
+  line-height: 45px;
+  font-size: 25px;
+  color: #FFF;
+  background: #00BFFF;
+}
+
+.ribbon10 h3:before {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  border: none;
+  border-bottom: solid 10px transparent;
+  border-right: solid 15px #397eb5;
+}
+
+.ribbon10 h3:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  right: 0;
+  border: none;
+  border-bottom: solid 10px transparent;
+  border-left: solid 15px #397eb5;
+}
+
+.ribbon11 {
+  display: inline-block;
+  position: relative;
+  height: 45px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.ribbon11:before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  bottom: -10px;
+  left: 145px;
+  z-index: -2;
+  border: 20px solid #56adf3;
+  border-left-color: transparent;
+}
+
+.ribbon11:after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  bottom: -10px;
+  right: 146px;
+  z-index: -2;
+  border: 20px solid #56adf3;
+  border-right-color: transparent;
+}
+
+.ribbon11 h3 {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0 20px;
+  line-height: 45px;
+  font-size: 25px;
+  color: #FFF;
+  background: #00BFFF;
+}
+
+.ribbon11 h3:before {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  border: none;
+  border-bottom: solid 10px transparent;
+  border-right: solid 15px #397eb5;
+}
+
+.ribbon11 h3:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  right: 0;
+  border: none;
+  border-bottom: solid 10px transparent;
+  border-left: solid 15px #397eb5;
+}
 
 .ribbon21 {
   display: inline-block;
@@ -140,7 +321,7 @@
   height: 40px;
   background: #40E0D0;
   bottom: -7px;
-  left: 52px;
+  left: 156px;
   z-index: -2;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
@@ -152,7 +333,7 @@
   height: 40px;
   background: #40E0D0;
   bottom: -10px;
-  right: 42px;
+  right: 146px;
   z-index: -2;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
@@ -206,7 +387,7 @@
   height: 40px;
   background: #40E0D0;
   bottom: -7px;
-  left: 38px;
+  left: 143px;
   z-index: -2;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
@@ -218,7 +399,7 @@
   height: 40px;
   background: #40E0D0;
   bottom: -10px;
-  right: 28px;
+  right: 133px;
   z-index: -2;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
