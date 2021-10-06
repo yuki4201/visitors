@@ -67,3 +67,4 @@ group :production do
 end
 gem 'rails-i18n'
 gem 'listen'
+gem 'validates_email_format_of'
