@@ -312,6 +312,7 @@ DEPENDENCIES
   font-awesome-sass (~> 5.13)
   jbuilder (~> 2.5)
   jquery-rails
+  jwt (~> 2.3.0)
   kaminari (~> 1.2.1)
   listen
   mysql2

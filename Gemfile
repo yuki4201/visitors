@@ -67,3 +67,4 @@ group :production do
 end
 gem 'rails-i18n'
 gem 'listen'
+gem 'jwt', '~> 2.3.0'
