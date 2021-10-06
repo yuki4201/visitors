@@ -42,3 +42,4 @@ https://docs.google.com/spreadsheets/d/18xk2v53wL-xYXCnJ0cSUkP5J1qO4bwXxDd3XfYX5
 
 ## 使用素材
 - 「ぱくたそ」 https://www.pakutaso.com
+- 「ロゴ作成」 https://www.designevo.com
