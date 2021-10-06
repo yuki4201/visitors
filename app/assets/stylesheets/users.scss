@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.alert{
+  font-weight: bold;
+  color: red;
+  padding-bottom: 15px;
+ }
+ 
+ .notice{
+  display: none;
+ }
+ 
 .ribbon7 {
   display: inline-block;
   position: relative;

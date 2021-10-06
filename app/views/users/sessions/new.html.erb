@@ -10,10 +10,11 @@
         <div class="p-4"></div>
          
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+         
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
           
+        <form>
           <div class="form-group row">
             <label for="email" class="col-md-3 offset-md-2">メールアドレス</label>
             <div class="col-sm-7">
