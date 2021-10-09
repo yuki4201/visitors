@@ -68,3 +68,4 @@ end
 gem 'rails-i18n'
 gem 'listen'
 gem 'jwt', '~> 2.3.0'
+gem 'kaminari','~> 1.2.1'

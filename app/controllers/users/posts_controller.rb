@@ -3,8 +3,7 @@ class Users::PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :show]
     
   def index
-    @posts = Post.all
-    @names = Post.page(params[:page])
+    @posts = Post.page(params[:page]).reverse_order
   end
   
   def new
