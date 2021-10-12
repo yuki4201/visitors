@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
          
   validates :name, presence: true, uniqueness: true
-  validates :password, presence: true
+  validates :password, presence: true, uniqueness: true
   validates :password_confirmation, presence: true
   
   has_many :posts, dependent: :destroy
