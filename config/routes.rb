@@ -47,8 +47,8 @@ Rails.application.routes.draw do
     
     get '/unsubscribe' => 'users#unsubscribe', as: 'confirm_unsubscribe'
     get '/withdraw' => 'users#withdraw'
-    patch '/withdraw' => 'users#withdraw' 
-    
+    patch '/withdraw' => 'users#withdraw'
+
   end
   
 end

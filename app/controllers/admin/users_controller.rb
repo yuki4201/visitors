@@ -27,14 +27,13 @@ class Admin::UsersController < ApplicationController
   def withdraw
     @user = User.find(params[:id])
     @user.update(is_valid: false)
-    reset_session
     redirect_to admin_users_path
   end
   
   private
   
   def user_params
-    params.require(:user).permit(:name, :email, :encrypted_password, :uid, :provider, :is_active)
+    params.require(:user).permit(:name, :email, :encrypted_password, :uid, :provider, :is_valid)
   end
   
 end

@@ -15,7 +15,7 @@ class User < ApplicationRecord
   enum is_valid: { '有効': true, '退会済': false }
   
   def active_for_authentication?
-    super && self.is_valid == '有効'
+    super && is_valid
   end
 
   # omniauthのコールバック時に呼ばれるメソッド

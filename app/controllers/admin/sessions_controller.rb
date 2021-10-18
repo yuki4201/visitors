@@ -18,7 +18,15 @@ class Admin::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  # protected
+  # def reject_inactive_user
+  #   @user = User.find_by(email: params[:user][:email])
+  #   if @user
+  #     if @user.valid_password?(params[:user][:password]) && !@user.is_valid
+  #       redirect_to root_path
+  #     end
+  #   end
+  # end
+  
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params

@@ -1,5 +1,5 @@
 class Admin::PlansController < ApplicationController
-    
+  
   def index
     @plans = Plan.all
     @names = Plan.page(params[:page])
