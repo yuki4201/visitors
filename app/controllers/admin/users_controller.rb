@@ -26,8 +26,11 @@ class Admin::UsersController < ApplicationController
   
   def withdraw
     @user = User.find(params[:id])
-    @user.update(is_valid: false)
+    @user.update!(is_valid: false)
     redirect_to admin_users_path
+  rescue => e
+    logger.error(e)
+    logger.error(e.backtrace.join("\n"))
   end
   
   private
