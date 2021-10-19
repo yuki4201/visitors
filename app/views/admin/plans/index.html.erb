@@ -34,7 +34,7 @@
                 </td>
                 <td><%= plan.city_name %></td>
                 <td><%= plan.lodgment_target_name %></td>
-                <td><%= link_to " edit", edit_admin_plan_path(plan), class: "btn btn-primary shadow fas fa-edit" %>
+                <td><%= link_to " editing", edit_admin_plan_path(plan), class: "btn btn-primary shadow fas fa-edit" %>
                     <%= link_to " delete", admin_plan_path(plan), method: :delete, class: "btn btn-danger shadow fas fa-trash-alt", "data-confirm" => "この投稿を削除します。よろしいですか？" %></td>
               </tr>
             <% end %>

@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col">
         <div class="p-4">
-        <div class="ribbon6 col-md-6 offset-md-3">
+        <div class="heading3 col-md-4 offset-md-4">
           <h3>DETAILS</h3>
         </div>
         <div class="p-3"></div>
@@ -49,7 +49,7 @@
         <div class="col-12">
           <% if @post.user_id == current_user.id %>
             <%= link_to " back", posts_path, class: "btn btn-info shadow fas fa-undo-alt" %>
-            <%= link_to " edit", edit_post_path, class: "btn btn-primary shadow fas fa-edit" %>
+            <%= link_to " editing", edit_post_path, class: "btn btn-primary shadow fas fa-edit" %>
             <%= link_to " delete", post_path(@post), method: :delete, class: "btn btn-danger shadow fas fa-trash-alt", "data-confirm" => "この投稿を削除します。よろしいですか？" %>
           <% else %>
             <%= link_to " back", posts_path, class: "btn btn-info shadow fas fa-undo-alt" %>

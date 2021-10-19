@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col">
         <div class="p-4"></div>
-        <div class="ribbon6 col-md-6 offset-md-3">
+        <div class="heading1 col-md-4 offset-md-4">
           <h3>LIST UP</h3>
         </div>
         <div class="p-3"></div>
@@ -48,7 +48,7 @@
               </td>
               <td><%= post.url %></td>
               <% if user_signed_in? %><i class="fas fa-info-square"></i>
-              <td><%= link_to " 詳細", post_path(post), class: "btn btn-info shadow fas fa-info" %></td>
+              <td><%= link_to " details", post_path(post), class: "btn btn-info shadow fas fa-info" %></td>
               <% end %>
             </tr>
             <% end %>
